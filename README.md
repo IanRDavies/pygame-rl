@@ -2,6 +2,8 @@
 
 Some game environments used for reinforcement learning.
 
+Forked from [here](xhttps://github.com/sc420/pygame-rl) with updates applied to make the model work for a research project in meta-learning for multi-agent reinforcement learning (Paper Forthcoming).
+
 ## Soccer
 
 A variant of the game described in the paper [He, He, et al. "Opponent modeling in deep reinforcement learning." International Conference on Machine Learning. 2016](https://www.umiacs.umd.edu/~hal/docs/daume16opponent.pdf). Pygame is used as the rendering framework. PyTMX is used to read the map file. Customized Minecraft texture is used for displaying the tiles.
