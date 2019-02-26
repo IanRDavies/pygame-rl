@@ -72,8 +72,9 @@ class SoccerEnvironment(environment.Environment):
         self.state.reset()
         return SoccerObservation(self.state, None, 0.0, None)
 
-    def take_action(self, action):
-        self.cached_action = action
+    def take_action(self, action, index):
+        # SHOULD UPDATE ACTIONS FOR ALL AGENTS
+        self.cached_action[index] = action
         return self.update_state()
 
     def take_cached_action(self, object_index, action):
@@ -107,7 +108,8 @@ class SoccerEnvironment(environment.Environment):
             for team_agent_index in range(self.options.team_size):
                 agent_index = self.get_agent_index(team_name, team_agent_index)
                 # Skip if the cached action has been specified
-                if self.cached_action[agent_index]:
+                if isinstance(self.cached_action, dict) and \
+                        self.cached_action[agent_index] is not None:
                     continue
                 # Select the previous action if it's frame skipping
                 if self.state.get_agent_frame_skip_index(agent_index) > 0:

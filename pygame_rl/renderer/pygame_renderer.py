@@ -43,9 +43,9 @@ class TiledLoader(metaclass=abc.ABCMeta):
             self.layers['all'].append(layer)
             # Categorize based on the property
             prop = layer.properties
-            if 'background' in prop and prop['background'] == 'true':
+            if 'background' in prop and prop['background']:
                 self.layers['background'].append(layer)
-            elif 'overlay' in prop and prop['overlay'] == 'true':
+            elif 'overlay' in prop and prop['overlay']:
                 self.layers['overlay'].append(layer)
 
 
