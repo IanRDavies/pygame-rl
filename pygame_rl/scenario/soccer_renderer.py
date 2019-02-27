@@ -51,7 +51,7 @@ class SoccerRenderer(pygame_renderer.TiledRenderer):
 
         # Set the screen size
         resolution = super().get_display_size()
-        self.screen = pygame.display.set_mode(resolution)
+        self.screen = pygame.display.set_mode(resolution, 0, 24)
 
         # Get the background
         self.background = super().get_background()
